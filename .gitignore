@@ -5,6 +5,7 @@
 wwwroot/js
 wwwroot/css
 wwwroot/images
+wwwroot/rev-manifest.json
 bower_components
 .vscode
 

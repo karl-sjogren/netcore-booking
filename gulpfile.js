@@ -38,7 +38,7 @@ try {
 gulp.task('default', ['build']);
 gulp.task('build', ['jshint', 'js', 'vendor-js', 'less', 'fonts', 'images', 'svg']);
 
-gulp.task('watch-base', ['build'], function () {
+gulp.task('watch', ['build'], function () {
   livereload.listen();
 
   //watches .js and .less files
@@ -59,32 +59,6 @@ gulp.task('watch-base', ['build'], function () {
     gulp.start('fonts');
   });
 });
-
-
-gulp.task('watch-dotnet', function() {
-    //also monitors .cs and .json file (asp.net stuff) and restarts the k runtime on file changes
-    //var exec = 'dnx kestrel --server.urls http://*:5000';
-    var exec = 'dotnet run';
-
-    nodemon({
-        ext: 'cs',
-        ignore: [ './obj/**', './bin/**' ],
-        verbose: false,
-        exec: exec,
-        watch: [
-          './',
-        ]
-    }).on('restart', function (changedFiles) {
-        console.log('Restarting!');
-        if(!!changedFiles && changedFiles.length > 0) {
-          changedFiles.forEach((item) => {
-            console.log(item);
-          });
-        }
-    });
-});
-
-gulp.task('watch', ['watch-base', 'watch-dotnet'], function () { });
 
 gulp.task('images', function () {
   return gulp.src('Assets/images/**/*.*')

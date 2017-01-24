@@ -36,7 +36,8 @@
       "version": "1.1.0-preview4-final",
       "imports": "portable-net45+win8+dnxcore50"
     },
-    "Microsoft.DotNet.Watcher.Tools": "1.1.0-preview4-final" 
+    "Microsoft.DotNet.Watcher.Tools": "1.1.0-preview4-final",
+    "Microsoft.AspNetCore.Razor.Tools": "1.1.0-preview4-final",
   },
 
   "frameworks": {
@@ -71,7 +72,7 @@
   },
 
   "scripts": {
-    "prepublish": [ "npm install", "bower install", "gulp clean", "gulp min" ],
+    "prepublish": [ "npm install", "bower install", "gulp build --environment=production" ],
     "postpublish": [
       "dotnet razor-precompile --configuration %publish:Configuration% --framework %publish:TargetFramework% --output-path %publish:OutputPath% %publish:ProjectPath%"
     ]

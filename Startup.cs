@@ -15,7 +15,7 @@ namespace WebApplication {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath);
 
-            if (env.IsDevelopment()) {
+            if(env.IsDevelopment()) {
                 builder.AddUserSecrets();
             }
 
@@ -26,16 +26,19 @@ namespace WebApplication {
         public void ConfigureServices(IServiceCollection services) {
             services.AddMvc();
             services.AddSingleton<IResourceManifestCache, ResourceManifestCache>();
+            services.AddSingleton<IConfigurationRoot>(Configuration);
+            services.AddSingleton<ITicketService, TicketService>();
+            services.AddSingleton<IMailService, MailService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory) {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddConsole((text, logLevel) => logLevel >= LogLevel.Debug, true);
             loggerFactory.AddDebug();
 
-            if (env.IsDevelopment()) {
+            if(env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             } else {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Home/Whopsie");
             }
 
             #region StaticFiles configuration

@@ -1,7 +1,14 @@
-@{}
+@model WebApplication.Models.HomeModel
 
-<div>
-    <form method="GET" asp-action="">
-        <input type="text" value="99RB" />
-    </form>
-</div>
+@if(!Model.Authenticated) {
+    <div class="login-panel">
+        <form method="GET" asp-action="">
+            <input name="auth" id="auth" type="text" value="99RB" />
+            <button type="submit">Logga in!</button>
+        </form>
+    </div>
+} else {
+    <div>
+        <span>Här kan man formulära sig. Det finns för närvarande @Model.TicketsLeft biljetter kvar.</span>
+    </div>
+}

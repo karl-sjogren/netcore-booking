@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.FileProviders;
 using WebApplication.Contracts;
 
-namespace Saga.Web.Core.TagHelpers {
+namespace WebbApplication {
     [HtmlTargetElement("script", Attributes = ScriptSrcAttributeName)]
     [HtmlTargetElement("link", Attributes = LinkHrefAttributeName, TagStructure = TagStructure.WithoutEndTag)]
     public class RevisionedResourceTagHelper : UrlResolutionTagHelper {

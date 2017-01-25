@@ -9,6 +9,8 @@
     </div>
 } else {
     <div>
-        <span>Här kan man formulära sig. Det finns för närvarande @Model.TicketsLeft biljetter kvar.</span>
+        <p>Här kan man formulära sig. Det finns för närvarande @Model.TicketsLeft biljetter kvar.</p>
     </div>
+
+    @Html.Partial("Partials/Form")
 }

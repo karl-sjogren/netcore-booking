@@ -37,7 +37,6 @@ namespace WebApplication.Services {
             }
         }
 
-
         public Dictionary<string, string> GetManifest() {
             Initialize();
             return _manifest;

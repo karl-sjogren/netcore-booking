@@ -33,6 +33,7 @@ namespace WebApplication {
             services.AddSingleton<IConfigurationRoot>(Configuration);
             services.AddSingleton<ITicketService, TicketService>();
             services.AddSingleton<IMailService, MailService>();
+            services.AddSingleton<IAuthenticationStore, AuthenticationStore>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddSingleton<IMvcRazorHost, CustomRazorHost>();

@@ -5,6 +5,7 @@ The following user secrets should be set before starting the application. In pro
 * MONGODB_URI
 * SENDGRID_APIKEY
 * SENDGRID_FROM
+* AUTH_PIN
 
 ```
 dotnet user-secrets set MONGODB_URI mongodb://user:pass@host.tld/database

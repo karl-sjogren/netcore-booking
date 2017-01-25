@@ -7,5 +7,7 @@ namespace WebApplication.Contracts {
          Int32 GetTicketCount();
          TicketOrder GetOrder(string id);
          List<TicketOrder> GetOrders();
+         void Save(TicketOrder order);
+         void Remove(TicketOrder order);
     }
 }

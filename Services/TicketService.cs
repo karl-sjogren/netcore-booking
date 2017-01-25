@@ -31,5 +31,19 @@ namespace WebApplication.Services {
             var collection = _database.GetCollection<TicketOrder>("orders");
             return collection.AsQueryable().ToList();
         }
+
+        public void Save(TicketOrder order) {
+            var collection = _database.GetCollection<TicketOrder>("orders");
+            var result = collection.ReplaceOne(p => p.Id == order.Id, order, new UpdateOptions { IsUpsert = true });
+            if(!result.IsAcknowledged)
+                throw new TicketException($"Failed to update order with id {order.Id}.");
+        }
+
+        public void Remove(TicketOrder order) {
+            var collection = _database.GetCollection<TicketOrder>("orders");
+            var result = collection.DeleteOne(o => o.Id == order.Id);
+            if(!result.IsAcknowledged)
+                throw new TicketException($"Failed to remove order with id {order.Id}.");
+        }
     }
 }

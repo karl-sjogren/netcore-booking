@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.IdGenerators;
 
 namespace WebApplication.Models.Database {
     public class TicketOrder {
@@ -17,6 +20,7 @@ namespace WebApplication.Models.Database {
         public List<Ticket> Tickets { get; }
 
         public TicketOrder() {
+            Id = ObjectId.GenerateNewId().ToString();
             Tickets = new List<Ticket>();
         }
     }    

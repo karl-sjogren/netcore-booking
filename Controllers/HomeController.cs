@@ -19,6 +19,10 @@ namespace WebApplication.Controllers {
             return View(model);
         }
 
+        public IActionResult Confirmation() {
+            return View();
+        }
+        
         public IActionResult Whopsie() {
             return View();
         }

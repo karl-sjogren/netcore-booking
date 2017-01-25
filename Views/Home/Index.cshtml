@@ -2,8 +2,8 @@
 
 @if(!Model.Authenticated) {
     <div class="login-panel">
-        <form method="GET" asp-action="">
-            <input name="auth" id="auth" type="text" value="99RB" />
+        <form method="GET">
+            <input name="auth" id="auth" type="text" required />
             <button type="submit">Logga in!</button>
         </form>
     </div>

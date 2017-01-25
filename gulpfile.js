@@ -43,7 +43,7 @@ gulp.task('watch', ['build'], function () {
 
   //watches .js and .less files
   //we used to do batch(function()...) in the callback but it seems to mess with running the tasks
-  watch('assets/scripts/**/*.js', { verbose: true }, function () {
+  watch('Assets/scripts/**/*.js', { verbose: true }, function () {
     gulp.start('js');
   });
 

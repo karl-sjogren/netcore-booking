@@ -8,6 +8,7 @@ wwwroot/images
 wwwroot/rev-manifest.json
 bower_components
 .vscode
+.DS_Store
 
 # User-specific files
 *.suo

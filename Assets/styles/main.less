@@ -107,17 +107,10 @@ body {
 .content-wrapper{
   //opacity: 0;
   //transition: opacity 1s;
-  &:after{
-    content: "";
-    background: @bg-color;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    //z-index: 10;
-    opacity: 1;
+  .h1, p, .ticket-type, .stars{
+    opacity: 0;
     transition: opacity 1s 9s;
+    
   }
   
   &.loaded{
@@ -125,8 +118,8 @@ body {
     .start-text{
       animation: stext 5s 1 none;
     }
-    &:after{
-      opacity: 0;
+    .h1, p, .ticket-type, .stars{
+      opacity: 1;
     }
     .logo{
       animation: logoanimation 5s 5s 1 forwards;

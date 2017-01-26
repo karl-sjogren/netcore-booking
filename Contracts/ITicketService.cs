@@ -6,7 +6,7 @@ namespace WebApplication.Contracts {
     public interface ITicketService {
          Int32 GetTicketCount();
          TicketOrder GetOrder(string id);
-         List<TicketOrder> GetOrders();
+         List<TicketOrder> GetOrders(Int32 pageIndex, Int32 pageSize);
          void Save(TicketOrder order);
          void Remove(TicketOrder order);
     }

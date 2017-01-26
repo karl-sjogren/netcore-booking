@@ -27,9 +27,9 @@ namespace WebApplication.Services {
             return collection.AsQueryable().FirstOrDefault(order => order.Id == id);
         }
 
-        public List<TicketOrder> GetOrders() {
+        public List<TicketOrder> GetOrders(Int32 pageIndex, Int32 pageSize) {
             var collection = _database.GetCollection<TicketOrder>("orders");
-            return collection.AsQueryable().ToList();
+            return collection.AsQueryable().Skip(pageIndex * pageSize).Take(pageSize).ToList();
         }
 
         public void Save(TicketOrder order) {

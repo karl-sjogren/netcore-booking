@@ -42,7 +42,7 @@ export default function() {
         }).then(() => {
             window.location = '/confirmation';
         }).then(null, () => {
-            alert('whopsie');
+            window.location = '/whopsie';
         });
     });
 

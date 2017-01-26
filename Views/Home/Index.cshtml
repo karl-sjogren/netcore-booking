@@ -3,7 +3,7 @@
 @if(!Model.Authenticated) {
     <div class="login-panel">
         <form method="GET">
-            <input name="auth" id="auth" type="text" required />
+            <input name="auth" id="auth" type="text" autocomplete="false" autofocus required />
             <button type="submit">Logga in!</button>
         </form>
     </div>

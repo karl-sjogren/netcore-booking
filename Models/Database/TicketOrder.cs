@@ -11,14 +11,21 @@ namespace WebApplication.Models.Database {
         public string City { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+
+        public string TicketType { get; set; }
         
         public bool Paid { get; set;}
+        public bool Deleted { get; set;}
+
+        public DateTime OrderDate { get; set; }
+        public DateTime? PaidDate { get; set; }
 
         public Int32 TicketCount { get; set; }
-        public List<Ticket> Tickets { get; }
+        public List<Ticket> Tickets { get; set; }
 
         public TicketOrder() {
             Id = ObjectId.GenerateNewId().ToString();
+            OrderDate = DateTime.Now;
             Tickets = new List<Ticket>();
         }
     }    

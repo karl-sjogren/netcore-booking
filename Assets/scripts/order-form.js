@@ -9,6 +9,10 @@ export default function() {
 
         $('#ticketType').val(ticketType);
         $('div.form.hidden').removeClass('hidden');
+
+        $('html, body').animate({
+            scrollTop: $('div.form').offset().top
+        }, 1000);
     });
 
     $('#order-form').on('submit', (e) => {

@@ -17,10 +17,10 @@ namespace WebApplication.Controllers {
             return View();
         }
 
-        [HttpGet("/admin/tickets")]
+        [HttpGet("/admin/api/orders")]
         public IActionResult Confirmation(Int32 pageIndex = 0, Int32 pageSize = 20) {
-            var tickets = _ticketService.GetOrders(pageIndex, pageSize);
-            return new ObjectResult(tickets);
+            var orders = _ticketService.GetOrders(pageIndex, pageSize);
+            return new ObjectResult(orders);
         }
     }
 }

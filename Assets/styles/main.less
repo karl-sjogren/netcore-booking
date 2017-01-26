@@ -24,22 +24,31 @@ body {
 }
 
 .start-text{
-  display: none;
+  //display: none;
   font-size: 50px;
   font-weight: bold;
   position: absolute;
-  top: 45%;
+  top: 40%;
   text-align: center;
-  width: 100%;
+  width: 99%;
   opacity: 0;
+  z-index: 11;
   span{
     white-space: nowrap;
   }
 }
 
 .logo{
+  position: absolute;
+  //width: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 450px;
+  z-index: 50;
+  
   img{
-    width: 150px;
+    width: 100%;;
   }
 }
 .ticket-type{
@@ -62,7 +71,7 @@ body {
 }
 .content {
   max-width: 600px;
-  margin: auto;
+  margin: 120px auto;
   
   h1 {
     text-align: center;
@@ -97,9 +106,71 @@ body {
 
 
 .content-wrapper{
-  opacity: 0;
-  transition: opacity 1s;
+  //opacity: 0;
+  //transition: opacity 1s;
+  .h1, p, .ticket-type, .stars{
+    opacity: 0;
+    transition: opacity 1s 9s;
+    
+  }
+  
   &.loaded{
+   // opacity: 1;
+    .start-text{
+      animation: stext 5s 1 none;
+    }
+    .h1, p, .ticket-type, .stars{
+      opacity: 1;
+    }
+    .logo{
+      animation: logoanimation 5s 5s 1 forwards;
+    }
+  }
+}
+
+@keyframes stext { 
+  0% {
+    opacity: 0;
+  }
+  20% {
     opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes logoanimation { 
+  0% {
+    left: 33%;
+    top: 30%;
+    opacity: 0;
+    width: 0px;
+    transform: rotate(-800deg);
+  }
+  30% {
+    left: 33%;
+    top: 30%;
+    opacity: 1;
+    width: 450px;
+    transform: rotate(25deg);
+  }
+  80%{
+    left: 33%;
+    top: 30%;
+    opacity: 1;
+    width: 450px;
+    transform: rotate(25deg);
+  }
+  100%{
+    opacity: 1;
+    transform: rotate(0deg);
+    left: 20px;
+    top: 20px;
+    width: 150px;
   }
 }

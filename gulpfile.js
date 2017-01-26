@@ -58,6 +58,10 @@ gulp.task('watch', ['build'], function () {
   watch('Assets/fonts/**/*.*', { verbose: true }, function () {
     gulp.start('fonts');
   });
+  
+  watch('Assets/svg/**/*.less', { verbose: true }, function () {
+    gulp.start('svg');
+  });
 });
 
 gulp.task('images', function () {

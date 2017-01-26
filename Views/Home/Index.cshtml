@@ -8,9 +8,54 @@
         </form>
     </div>
 } else {
-    <div>
-        <p>Här kan man formulära sig. Det finns för närvarande @Model.TicketsLeft biljetter kvar.</p>
+    <div class="start-text">
+      <span>Umeborna reser inte till någonting,</span>
+      <span>dom reser från någonting.</span>
     </div>
+    
+    <div class="logo">
+      <img src="svg/suntrip.svg"/>
+    </div>
+    <div class="content">
+      <div class="texts">
+        <h1>
+          <p class="sub">Suntrip återuppstår för en kväll med ett ända mål;</p>
+          <p class="head">att ta med er på en resa tillbaka till 80-talet!</p>
+        </h1>
+        <p>Så sparka av dig snökängorna och på med axelvaddarna och solbrillorna så drar vi till solen*.</p>
+        <p>Häng med oss och plocka kulor, kolla om vi tål starksprit & lär oss uttala stork.. Skorch (eller hur var det)</p>
+      </div>
+      <p class="gas">Brännsletillägget är redan betalt så vad väntar du på?<p>
+      <div class="ticket-type">
+        <h2>HELPENSION</h2>
+        <ol>
+          <li>
+            Resa
+          </li>
+          <li>
+            middag
+          </li>
+          <li>
+            välkommstdrink
+          </li>
+          <li>
+            taxfree
+          </li>
+          <li>
+            Måltidsdryck ingår som regel ej**
+          </li>
+        </ol>
+        <button class="order">Boka Helpension</button>
+      </div>
+      <div class="form">
+        
+        @Html.Partial("Partials/Form")
+      </div>
+    
 
-    @Html.Partial("Partials/Form")
+      <div class="stars">
+        <span>* ingen sol utlovas.. man vad var det Rudolf sa: "sol i sinne brun inne"? (fel film jag vet, men ändå.)</span>
+        <span>** lokala avvikelser kan förekomma</span>
+      </div>
+    </div>
 }

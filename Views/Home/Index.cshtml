@@ -3,7 +3,7 @@
 @if(!Model.Authenticated) {
     <div class="login-panel">
         <form method="GET">
-            <input name="auth" id="auth" type="text" required />
+            <input name="auth" id="auth" type="text" autocomplete="false" autofocus required />
             <button type="submit">Logga in!</button>
         </form>
     </div>
@@ -45,10 +45,9 @@
             Måltidsdryck ingår som regel ej**
           </li>
         </ol>
-        <button class="order">Boka Helpension</button>
+        <button class="order" data-ticket-type="large">Boka Helpension</button> <button class="order" data-ticket-type="small">Boka Medelpension</button>
       </div>
-      <div class="form">
-        
+      <div class="form hidden">
         @Html.Partial("Partials/Form")
       </div>
     

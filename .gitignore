@@ -4,6 +4,7 @@
 # Project files
 wwwroot/js
 wwwroot/css
+wwwroot/svg
 wwwroot/images
 wwwroot/rev-manifest.json
 bower_components

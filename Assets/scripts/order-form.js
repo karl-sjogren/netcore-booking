@@ -1,6 +1,16 @@
 import $ from 'jquery';
 
 export default function() {
+    $('button.order').on('click', (e) => {
+        e.preventDefault();
+
+        let target = $(e.currentTarget);
+        let ticketType = target.data('ticketType');
+
+        $('#ticketType').val(ticketType);
+        $('div.form.hidden').removeClass('hidden');
+    });
+
     $('#order-form').on('submit', (e) => {
         e.preventDefault();
         
@@ -16,6 +26,7 @@ export default function() {
             city: $('#city').val(),
             phone: $('#phone').val(),
             email: $('#email').val(),
+            ticketType: $('#ticketType').val(),
             tickets: []
         };
 
@@ -42,7 +53,7 @@ export default function() {
         }).then(() => {
             window.location = '/confirmation';
         }).then(null, () => {
-            alert('whopsie');
+            window.location = '/whopsie';
         });
     });
 

@@ -5,6 +5,7 @@
     width: 100%;
     padding: 5px;
     font-size: 15px;
+    box-sizing: border-box;
   }
   /*input{
     border: none;
@@ -32,4 +33,24 @@ button{
     border-color: @brand-red;
     background: rgba(255,255,255,0.4);
   }
+}
+
+.form.hidden{
+  max-height: 0;
+  
+}
+.ticket-count-container{
+  font-size: 20px;
+  margin: 10px 0;
+  label{
+    
+  }
+  
+  
+}
+.form{
+  max-height: 500px;
+  transition: max-height 1s;
+  overflow: hidden;
+  display: block !important;
 }

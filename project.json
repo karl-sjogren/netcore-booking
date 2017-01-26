@@ -9,6 +9,7 @@
     "Microsoft.AspNetCore.Authentication.Cookies": "1.1.0",
     "Microsoft.AspNetCore.Diagnostics": "1.1.0",
     "Microsoft.AspNetCore.Mvc": "1.0.1",
+    "Microsoft.AspNetCore.Mvc.Razor.ViewCompilation.Design": "1.1.0-preview4-final",
     "Microsoft.AspNetCore.Razor.Tools": {
       "version": "1.1.0-preview4-final",
       "type": "build"

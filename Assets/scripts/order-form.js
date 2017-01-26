@@ -12,7 +12,7 @@ export default function() {
 
         $('html, body').animate({
             scrollTop: $('div.form').offset().top
-        }, 2000);
+        }, 1000);
     });
 
     $('#order-form').on('submit', (e) => {

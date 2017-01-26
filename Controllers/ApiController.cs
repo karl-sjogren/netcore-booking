@@ -27,7 +27,12 @@ namespace WebApplication.Controllers {
             if(ticketCount >= 120)
                 return Forbid();
 
-            order.TicketCount = order.Tickets.Count;            
+            var validator = new TicketOrderValidator();
+            var result = validator.Validate(order);
+            if(!result.IsValid)
+                return BadRequest(result.Errors);
+
+            order.TicketCount = order.Tickets.Count;
 
             _ticketService.Save(order);
 

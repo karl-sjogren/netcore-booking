@@ -2,9 +2,10 @@
 
 @brand-red:   #eb0822;
 @border-color: #E8970C;
+@bg-color: #fdbe03;
 
 body {
-  background-color: #fdbe03;
+  background-color: @bg-color;
   color: @brand-red;
   font-family: "Times New Roman", Georgia, Serif;
 }
@@ -58,6 +59,9 @@ body {
 .ticket-type{
   border: 2px solid @border-color;
   padding: 20px;
+  max-width: 300px;
+  margin: 60px auto 20px;
+
   h2{
     margin: 0;
   }
@@ -98,5 +102,9 @@ body {
   bottom: 0;
   right: 0;
   font-size: 15px;
-  padding: 5px;
+  padding: 10px;
+  background: @bg-color;
+  border-top: @border-color 1px solid;
+  width: 100%;
+  text-align: right
 }

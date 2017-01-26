@@ -1,62 +1,63 @@
 @model WebApplication.Models.HomeModel
 
 @if(!Model.Authenticated) {
-    <div class="login-panel">
-        <form method="GET">
-            <input name="auth" id="auth" type="text" autocomplete="false" autofocus required />
-            <button type="submit">Logga in!</button>
-        </form>
-    </div>
+<div class="login-panel">
+  <form method="GET">
+    <input name="auth" id="auth" type="text" autocomplete="false" autofocus required />
+    <button type="submit">Logga in!</button>
+  </form>
+</div>
 } else {
-  <div class="content-wrapper"></div>
-    <div class="start-text">
-      <span>Umeborna reser inte till någonting,</span>
-      <span>dom reser från någonting.</span>
-    </div>
-    
-    <div class="logo">
-      <img src="svg/suntrip2.svg"/>
-    </div>
-    <div class="content">
-      <div class="texts">
-        <h1>
-          <p class="sub">Suntrip återuppstår för en kväll med ett ända mål;</p>
-          <p class="head">att ta med er på en resa tillbaka till 80-talet!</p>
-        </h1>
-        <p>Så sparka av dig snökängorna och på med axelvaddarna och solbrillorna så drar vi till solen*.</p>
-        <p>Häng med oss och plocka kulor, kolla om vi tål starksprit & lär oss uttala Stork.. Storch (eller hur var det)</p>
-      </div>
-      <p class="gas">Brännsletillägget är redan betalt så vad väntar du på?<p>
-      <div class="ticket-type">
-        <h2>HELPENSION</h2>
-        <ol>
-          <li>
-            Resa
-          </li>
-          <li>
-            middag
-          </li>
-          <li>
-            välkommstdrink
-          </li>
-          <li>
-            taxfree
-          </li>
-          <li>
-            Måltidsdryck ingår som regel ej**
-          </li>
-        </ol>
-        <button class="order" data-ticket-type="large">Boka Helpension</button> <button class="order" data-ticket-type="small">Boka Medelpension</button>
-      </div>
-      <div class="form hidden">
-        @Html.Partial("Partials/Form")
-      </div>
-    
+<div class="content-wrapper">
+  <div class="start-text">
+    <span>Umeborna reser inte till någonting,</span>
+    <span>dom reser från någonting.</span>
+  </div>
 
-      
+  <div class="logo">
+    <img src="svg/suntrip2.svg"/>
+  </div>
+  <div class="content">
+    <div class="texts">
+      <h1>
+        <p class="sub">Suntrip återuppstår för en kväll med ett ända mål;</p>
+        <p class="head">att ta med er på en resa tillbaka till 80-talet!</p>
+      </h1>
+      <p>Så sparka av dig snökängorna och på med axelvaddarna och solbrillorna så drar vi till solen*.</p>
+      <p>Häng med oss och plocka kulor, kolla om vi tål starksprit & lär oss uttala Stork.. Storch (eller hur var det)</p>
     </div>
-  <footer class="stars">
+    <p class="gas">Brännsletillägget är redan betalt så vad väntar du på?<p>
+    <div class="ticket-type">
+      <h2>HELPENSION</h2>
+      <ol>
+        <li>
+          Resa
+        </li>
+        <li>
+          middag
+        </li>
+        <li>
+          välkommstdrink
+        </li>
+        <li>
+          taxfree
+        </li>
+        <li>
+          Måltidsdryck ingår som regel ej**
+        </li>
+      </ol>
+      <button class="order" data-ticket-type="large">Boka Helpension</button> <button class="order" data-ticket-type="small">Boka Medelpension</button>
+    </div>
+    <div class="form hidden">
+      @Html.Partial("Partials/Form")
+    </div>
+
+
+
+  </div>
+  <div class="stars">
     <span>* ingen sol utlovas.. man vad var det Rudolf sa: "sol i sinne brun inne"? (fel film jag vet, men ändå.)</span>
     <span>** lokala avvikelser kan förekomma</span>
-  </footer>
+  </div>
+</div>
 }

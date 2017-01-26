@@ -45,10 +45,9 @@
             Måltidsdryck ingår som regel ej**
           </li>
         </ol>
-        <button class="order">Boka Helpension</button>
+        <button class="order" data-ticket-type="large">Boka Helpension</button> <button class="order" data-ticket-type="small">Boka Medelpension</button>
       </div>
-      <div class="form">
-        
+      <div class="form hidden">
         @Html.Partial("Partials/Form")
       </div>
     

@@ -156,14 +156,28 @@ body {
     left: 33%;
     top: 30%;
     opacity: 1;
-    width: 450px;
+    width: 100vw;
+    max-width: 450px;
+    transform: rotate(28deg);
+  }
+  32%{
+    transform: rotate(23deg);
+  }
+  36%{
+    transform: rotate(26deg);
+  }
+  40%{
+    transform: rotate(24deg);
+  }
+  44%{
     transform: rotate(25deg);
   }
   80%{
     left: 33%;
     top: 30%;
     opacity: 1;
-    width: 450px;
+     width: 100vw;
+    max-width: 450px;
     transform: rotate(25deg);
   }
   100%{
@@ -172,5 +186,12 @@ body {
     left: 20px;
     top: 20px;
     width: 150px;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 520px) {
+  .start-texts{
+    width: 96vw;
+    font-size: 5vw;
   }
 }

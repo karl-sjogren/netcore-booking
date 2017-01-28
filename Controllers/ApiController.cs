@@ -40,7 +40,7 @@ namespace WebApplication.Controllers {
 
             builder.AppendLine($"Hej {order.Name}!");
             builder.AppendLine();
-            builder.AppendLine($"Tack för din bokning av {order.TicketCount} biljetter till Suntripfesten! Betalning sker med magiska bönor under bron där borta.");
+            builder.AppendLine($"Tack för din bokning av {order.TicketCount} biljetter till Suntripfesten! Man måste ju betala också har jag hört, vi skickar ut info om det inom några dagar.");
             builder.AppendLine("Nedan följer en summering av din bokning.");
             
             builder.AppendLine();

@@ -26,6 +26,7 @@ body {
 .start-text{
   //display: none;
   font-size: 50px;
+  
   font-weight: bold;
   position: absolute;
   top: 40%;
@@ -41,9 +42,10 @@ body {
 .logo{
   position: absolute;
   //width: 100%;
-  left: 0;
+  left: 50%;
   top: 0;
   opacity: 0;
+  margin-left: -450px/2;
   width: 450px;
   z-index: 50;
   
@@ -56,7 +58,7 @@ body {
   padding: 20px;
   max-width: 300px;
   margin: 60px auto 20px;
-
+  position: relative;
   h2{
     margin: 0;
   }
@@ -126,6 +128,14 @@ body {
       animation: logoanimation 5s 5s 1 forwards;
     }
   }
+  .price{
+    font-size: 35px;
+    position: absolute;
+    right: 10px;
+    transform: rotate(30deg);
+    top: 30px;
+    font-weight: bold;
+  }
 }
 
 @keyframes stext { 
@@ -146,16 +156,18 @@ body {
 
 @keyframes logoanimation { 
   0% {
-    left: 33%;
+    left: 50%;
     top: 30%;
+    margin-left: 0;
     opacity: 0;
     width: 0px;
     transform: rotate(-800deg);
   }
   30% {
-    left: 33%;
+    left: 50%;
     top: 30%;
     opacity: 1;
+    margin-left: -450px/2;
     width: 100vw;
     max-width: 450px;
     transform: rotate(28deg);
@@ -173,10 +185,11 @@ body {
     transform: rotate(25deg);
   }
   80%{
-    left: 33%;
+    left: 50%;
     top: 30%;
     opacity: 1;
-     width: 100vw;
+    margin-left: -450px/2;
+    width: 100vw;
     max-width: 450px;
     transform: rotate(25deg);
   }
@@ -185,12 +198,14 @@ body {
     transform: rotate(0deg);
     left: 20px;
     top: 20px;
+    margin-left: 0;
     width: 150px;
+    max-width: 150px;
   }
 }
 
 @media only screen and (min-width: 0px) and (max-width: 520px) {
-  .start-texts{
+  .start-text{
     width: 96vw;
     font-size: 5vw;
   }

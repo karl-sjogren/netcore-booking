@@ -23,6 +23,23 @@ body {
   
 }
 
+.confirmation{
+  max-width: 600px;
+  margin: 200px auto;
+  
+  .citat{
+    margin-top: 50px;
+    &:before, &:after{
+      content: '"';
+      font-size: 55px;
+      display: block;
+      height: 27px;
+    }
+  }
+}
+
+
+
 .start-text{
   //display: none;
   font-size: 50px;
@@ -39,7 +56,7 @@ body {
   }
 }
 
-.logo{
+.logo, .logo-static{
   position: absolute;
   //width: 100%;
   left: 50%;

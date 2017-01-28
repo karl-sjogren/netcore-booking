@@ -1,6 +1,8 @@
 @import "form.less";
 @import "login.less";
 @import "admin.less";
+@import "mixin.less";
+
 
 @brand-red:   #eb0822;
 @border-color: #E8970C;
@@ -142,19 +144,23 @@ body {
   //transition: opacity 1s;
   .h1, p, .ticket-type, .stars, .mail{
     opacity: 0;
-    transition: opacity 1s 9s;
+    #mixin.transition(opacity 1s 9s);
     
   }
   
   &.loaded{
    // opacity: 1;
     .start-text{
+       -webkit-animation: stext 5s 1 none;
+      -moz-animation:    stext 5s 1 none;
       animation: stext 5s 1 none;
     }
     .h1, p, .ticket-type, .stars, .mail{
       opacity: 1;
     }
     .logo{
+      -webkit-animation: logoanimation 5s 5s 1 forwards;
+      -moz-animation:    logoanimation 5s 5s 1 forwards;
       animation: logoanimation 5s 5s 1 forwards;
     }
   }
@@ -162,12 +168,40 @@ body {
     font-size: 35px;
     position: absolute;
     right: 10px;
-    transform: rotate(30deg);
+    #mixin.transform(rotate(30deg));
     top: 30px;
     font-weight: bold;
   }
 }
 
+@-webkit-keyframes stext { 
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes stext { 
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes stext { 
   0% {
     opacity: 0;
@@ -184,14 +218,15 @@ body {
 }
 
 
-@keyframes logoanimation { 
+@-webkit-keyframes logoanimation { 
   0% {
     left: 50%;
     top: 30%;
     margin-left: 0;
     opacity: 0;
     width: 0px;
-    transform: rotate(-800deg);
+    
+    #mixin.transform(rotate(-800deg));
   }
   30% {
     left: 50%;
@@ -200,19 +235,19 @@ body {
     margin-left: -450px/2;
     width: 100vw;
     max-width: 450px;
-    transform: rotate(28deg);
+    #mixin.transform(rotate(28deg));
   }
   32%{
-    transform: rotate(23deg);
+    #mixin.transform(rotate(23deg));
   }
   36%{
-    transform: rotate(26deg);
+    #mixin.transform(rotate(26deg));
   }
   40%{
-    transform: rotate(24deg);
+    #mixin.transform(rotate(24deg));
   }
   44%{
-    transform: rotate(25deg);
+    #mixin.transform(rotate(25deg));
   }
   80%{
     left: 50%;
@@ -221,11 +256,109 @@ body {
     margin-left: -450px/2;
     width: 100vw;
     max-width: 450px;
-    transform: rotate(25deg);
+    #mixin.transform(rotate(25deg));
   }
   100%{
     opacity: 1;
-    transform: rotate(0deg);
+    #mixin.transform(rotate(0deg));
+    left: 20px;
+    top: 20px;
+    margin-left: 0;
+    width: 150px;
+    max-width: 150px;
+  }
+}
+@-moz-keyframes logoanimation { 
+  0% {
+    left: 50%;
+    top: 30%;
+    margin-left: 0;
+    opacity: 0;
+    width: 0px;
+    #mixin.transform(rotate(-800deg));
+  }
+  30% {
+    left: 50%;
+    top: 30%;
+    opacity: 1;
+    margin-left: -450px/2;
+    width: 100vw;
+    max-width: 450px;
+    #mixin.transform(rotate(28deg));
+  }
+  32%{
+    #mixin.transform(rotate(23deg));
+  }
+  36%{
+   #mixin.transform(rotate(26deg));
+  }
+  40%{
+    #mixin.transform(rotate(24deg));
+  }
+  44%{
+    #mixin.transform(rotate(25deg));
+  }
+  80%{
+    left: 50%;
+    top: 30%;
+    opacity: 1;
+    margin-left: -450px/2;
+    width: 100vw;
+    max-width: 450px;
+    #mixin.transform(rotate(25deg));
+  }
+  100%{
+    opacity: 1;
+    #mixin.transform(rotate(0deg));
+    left: 20px;
+    top: 20px;
+    margin-left: 0;
+    width: 150px;
+    max-width: 150px;
+  }
+}
+@keyframes logoanimation { 
+  0% {
+    left: 50%;
+    top: 30%;
+    margin-left: 0;
+    opacity: 0;
+    width: 0px;
+    #mixin.transform(rotate(-800deg));
+  }
+  30% {
+    left: 50%;
+    top: 30%;
+    opacity: 1;
+    margin-left: -450px/2;
+    width: 100vw;
+    max-width: 450px;
+    #mixin.transform(rotate(28deg));
+  }
+  32%{
+    #mixin.transform(rotate(23deg));
+  }
+  36%{
+    #mixin.transform(rotate(26deg));
+  }
+  40%{
+    #mixin.transform(rotate(24deg));
+  }
+  44%{
+    #mixin.transform(rotate(25deg));
+  }
+  80%{
+    left: 50%;
+    top: 30%;
+    opacity: 1;
+    margin-left: -450px/2;
+    width: 100vw;
+    max-width: 450px;
+    #mixin.transform(rotate(25deg));
+  }
+  100%{
+    opacity: 1;
+    #mixin.transform(rotate(0deg));
     left: 20px;
     top: 20px;
     margin-left: 0;

@@ -1,20 +1,52 @@
+@model WebApplication.Models.AdminIndexModel
+
 <div class="logo">
     <img src="/svg/suntrip2.svg"/>
 </div>
 <div class="admin-wrapper">
     <h1>Administration</h1>
 
-    <h2>Biljettbokningar</h2>
+    <h2>Biljettbokningar (@Model.OrderedTickets st varav @Model.PaidTickets betalda)</h2>
 
     <table id="orders">
-        <tr>
-            <th>Namn</th>
-            <th>Telefonnummer</th>
-            <th>E-post</th>
-            <th>Bokningsdatum</th>
-            <th>Betalt</th>
-            <th>Betalningsdatum</th>
-            <th>Åtgärder</th>
-        </tr>
+        <thead>
+            <tr>
+                <th>Namn</th>
+                <th>Telefonnummer</th>
+                <th>E-post</th>
+                <th>Bokningsdatum</th>
+                <th>Betalt</th>
+                <th>Betalningsdatum</th>
+                <th>Åtgärder</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var order in Model.Tickets) {
+                <tr>
+                    <td>@order.Name (@order.TicketCount st)</td>
+                    <td>@order.Phone</td>
+                    <td>@order.Email</td>
+                    <td>@order.OrderDate</td>
+                    <td>@(order.Paid ? "Japp" : "Nope")</td>
+                    <td>@order.PaidDate</td>
+                    <td>
+                        <button class="set-paid" data-order-id="@order.Id">@(order.Paid ? "Markera obetald" : "Markera betald")</button>
+                        <button class="remove-order" data-order-id="@order.Id">Ta bort</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7">
+                    @if(Model.PageIndex > 0) {
+                        @Html.ActionLink("Föregående", "Index", "Admin", new { pageIndex = Model.PageIndex - 1 })
+                    }
+                    @if((Model.PageIndex + 1) * Model.PageSize > Model.OrderedTickets) {
+                        @Html.ActionLink("Nästa", "Index", "Admin", new { pageIndex = Model.PageIndex + 1 })
+                    }
+                </td>
+            </tr>
+        </tfoot>
     </table>
 </div>

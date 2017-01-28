@@ -22,6 +22,12 @@ namespace WebApplication.Services {
             return count;
         }
 
+        public Int32 GetPaidTicketCount() {
+            var collection = _database.GetCollection<TicketOrder>("orders");
+            var count = collection.AsQueryable().Where(order => order.Paid).Select(order => order.TicketCount).Sum();
+            return count;
+        }
+
         public TicketOrder GetOrder(string id) {
             var collection = _database.GetCollection<TicketOrder>("orders");
             return collection.AsQueryable().FirstOrDefault(order => order.Id == id);

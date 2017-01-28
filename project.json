@@ -25,7 +25,8 @@
     "Microsoft.Extensions.Logging.Debug": "1.1.0",
     "MongoDB.Driver": "2.4.1",
     "SendGrid.NetCore": "1.0.0-rtm-00002",
-    "FluentValidation": "6.4.0-beta9"
+    "FluentValidation": "6.4.0-beta9",
+    "idunno.Authentication": "1.0.0"
   },
 
   "tools": {

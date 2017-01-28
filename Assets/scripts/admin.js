@@ -3,6 +3,7 @@ import moment from 'moment';
 
 export default function() {
     $(document).on('ready', () => {
+        return;
         $.ajax({
             type: 'GET',
             url: '/admin/api/orders',

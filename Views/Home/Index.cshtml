@@ -48,7 +48,11 @@
         </li>
       </ol>
       <span class="price">495:-</span>
-      <button class="order" data-ticket-type="large">Boka Helpension</button>
+      @if(Model.TicketsLeft > 0) {
+        <button class="order" data-ticket-type="large">Boka Helpension</button>
+      } else {
+        <span class="no-tickets">Tyvärr verkar vi vara fullbokade för tillfället!</span>
+      }
     </div>
     <div class="form hidden">
       @Html.Partial("Partials/Form")

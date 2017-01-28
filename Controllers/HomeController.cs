@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication.Contracts;
 using WebApplication.Models;
@@ -14,7 +15,7 @@ namespace WebApplication.Controllers {
 
         public IActionResult Index([FromQuery]string auth = null) {
             var model = new HomeModel();
-            model.Authenticated = auth == _authenicationStore.GetPin();
+            model.Authenticated = _authenicationStore.GetPin().Equals(auth, StringComparison.OrdinalIgnoreCase);
             model.TicketsLeft = 120 - _ticketService.GetTicketCount();
             return View(model);
         }

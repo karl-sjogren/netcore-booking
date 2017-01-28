@@ -10,7 +10,7 @@ namespace WebApplication.Services {
         }
 
         public string GetPin() {
-            return _pin;
+            return _pin ?? string.Empty;
         }
     }
 }

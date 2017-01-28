@@ -24,10 +24,30 @@ namespace WebApplication.Controllers {
             return View(model);
         }
 
-        /*[HttpGet("/admin/api/orders")]
-        public IActionResult Confirmation() {
-            var orders = _ticketService.GetOrders(pageIndex, pageSize);
-            return new ObjectResult(orders);
-        }*/
+        [HttpPut("/admin/api/orders/{orderId}/set-paid")]
+        public IActionResult SetPaid(string orderId) {
+            var order = _ticketService.GetOrder(orderId);
+            order.Paid = true;
+            order.PaidDate = DateTime.Now;
+            _ticketService.Save(order);
+            return new ObjectResult(order);
+        }
+
+        [HttpPut("/admin/api/orders/{orderId}/unset-paid")]
+        public IActionResult SetUnpaid(string orderId) {
+            var order = _ticketService.GetOrder(orderId);
+            order.Paid = false;
+            order.PaidDate = null;
+            _ticketService.Save(order);
+            return new ObjectResult(order);
+        }
+
+        [HttpDelete("/admin/api/orders/{orderId}")]
+        public IActionResult RemoveOrder(string orderId) {
+            var order = _ticketService.GetOrder(orderId);
+            order.Deleted = true;
+            _ticketService.Save(order);
+            return NoContent();
+        }
     }
 }

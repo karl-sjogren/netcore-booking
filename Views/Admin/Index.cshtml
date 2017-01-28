@@ -26,12 +26,14 @@
                     <td>@order.Name (@order.TicketCount st)</td>
                     <td>@order.Phone</td>
                     <td>@order.Email</td>
-                    <td>@order.OrderDate</td>
+                    <td>@order.OrderDate.ToString("yyyy-MM-dd")</td>
                     <td>@(order.Paid ? "Japp" : "Nope")</td>
-                    <td>@order.PaidDate</td>
+                    <td>@(order.PaidDate.HasValue ? order.PaidDate.Value.ToString("yyyy-MM-dd") : "")</td>
                     <td>
-                        <button class="set-paid" data-order-id="@order.Id">@(order.Paid ? "Markera obetald" : "Markera betald")</button>
-                        <button class="remove-order" data-order-id="@order.Id">Ta bort</button>
+                        <button class="@(order.Paid ? "unset" : "set")-paid" data-order-id="@order.Id" data-order-name="@order.Name">
+                            @(order.Paid ? "Markera obetald" : "Markera betald")
+                        </button>
+                        <button class="remove-order" data-order-id="@order.Id" data-order-name="@order.Name">Ta bort</button>
                     </td>
                 </tr>
             }

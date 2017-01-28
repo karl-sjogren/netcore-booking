@@ -20,7 +20,7 @@ namespace WebApplication.Controllers {
         [HttpPost("/api/orders")]
         public IActionResult PostOrder([FromBody]TicketOrder order) {
             if(!IsAuthenticated)
-                return Unauthorized();
+                return Forbid();
 
             var ticketCount = _ticketService.GetTicketCount();
 

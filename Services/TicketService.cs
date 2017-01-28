@@ -18,13 +18,19 @@ namespace WebApplication.Services {
 
         public Int32 GetTicketCount() {
             var collection = _database.GetCollection<TicketOrder>("orders");
-            var count = collection.AsQueryable().Select(order => order.TicketCount).Sum();
+            var count = collection.AsQueryable()
+                            .Where(order => order.Deleted == false)
+                            .Select(order => order.TicketCount)
+                            .Sum();
             return count;
         }
 
         public Int32 GetPaidTicketCount() {
             var collection = _database.GetCollection<TicketOrder>("orders");
-            var count = collection.AsQueryable().Where(order => order.Paid).Select(order => order.TicketCount).Sum();
+            var count = collection.AsQueryable()
+                            .Where(order => order.Paid && order.Deleted == false)
+                            .Select(order => order.TicketCount)
+                            .Sum();
             return count;
         }
 
@@ -35,7 +41,7 @@ namespace WebApplication.Services {
 
         public List<TicketOrder> GetOrders(Int32 pageIndex, Int32 pageSize) {
             var collection = _database.GetCollection<TicketOrder>("orders");
-            return collection.AsQueryable().Skip(pageIndex * pageSize).Take(pageSize).ToList();
+            return collection.AsQueryable().Where(order => order.Deleted == false).Skip(pageIndex * pageSize).Take(pageSize).ToList();
         }
 
         public void Save(TicketOrder order) {

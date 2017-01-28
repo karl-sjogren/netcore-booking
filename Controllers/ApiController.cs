@@ -59,7 +59,7 @@ namespace WebApplication.Controllers {
                 builder.AppendLine("  " + ticket.Name);
 
             builder.AppendLine();
-            builder.AppendLine("Har du frågor kan du kontakta oss på via brevduva varannan fredag i februari.");
+            builder.AppendLine("Har du frågor kan du kontakta oss genom att svara på detta mail.");
             builder.AppendLine();
             builder.AppendLine("/ Suntrip-folket");
 

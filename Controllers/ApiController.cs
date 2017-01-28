@@ -15,7 +15,7 @@ namespace WebApplication.Controllers {
             _mailService = mailService;
         }
 
-        private bool IsAuthenticated =>  Request.Query["auth"] == _authenicationStore.GetPin();
+        private bool IsAuthenticated => _authenicationStore.ValidatePin(Request.Query["auth"]);
 
         [HttpPost("/api/orders")]
         public IActionResult PostOrder([FromBody]TicketOrder order) {

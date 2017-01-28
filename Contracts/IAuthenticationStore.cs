@@ -1,5 +1,5 @@
 namespace WebApplication.Contracts {
     public interface IAuthenticationStore {
-        string GetPin();
+        bool ValidatePin(string pin);
     }
 }

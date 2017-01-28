@@ -8,11 +8,9 @@ namespace WebApplication.Controllers {
     [Authorize]
     public class AdminController : Controller {
         private readonly ITicketService _ticketService;
-        private readonly IAuthenticationStore _authenicationStore;
 
-        public AdminController(ITicketService ticketService, IAuthenticationStore authenticationStore) {
+        public AdminController(ITicketService ticketService) {
             _ticketService = ticketService;
-            _authenicationStore = authenticationStore;
         }
 
         public IActionResult Index(Int32 pageIndex = 0, Int32 pageSize = 20) {

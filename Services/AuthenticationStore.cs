@@ -1,3 +1,4 @@
+using System;
 using Microsoft.Extensions.Configuration;
 using WebApplication.Contracts;
 
@@ -9,8 +10,11 @@ namespace WebApplication.Services {
             _pin = configuration["AUTH_PIN"];
         }
 
-        public string GetPin() {
-            return _pin ?? string.Empty;
+        public bool ValidatePin(string pin) {
+            if(_pin == null)
+                return false;
+
+            return _pin.Equals(pin, StringComparison.OrdinalIgnoreCase);
         }
     }
 }

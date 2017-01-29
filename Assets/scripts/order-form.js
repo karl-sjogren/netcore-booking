@@ -18,9 +18,14 @@ export default function() {
     $('#order-form').on('submit', (e) => {
         e.preventDefault();
         
-        let isValid = e.currentTarget.reportValidity();
-        if(!isValid) {
-            return;
+        try {
+            let isValid = e.currentTarget.reportValidity();
+            if(!isValid) {
+                return;
+            }
+        } catch(err) {
+            // This happens in Safari since ut sucks.
+            console.warn('Failed to validate form', err);
         }
 
         let request = {

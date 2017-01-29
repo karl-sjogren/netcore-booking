@@ -13,4 +13,10 @@ export default function() {
     $(window).on('load', () => {
         $('.content-wrapper').addClass('loaded');
     });
+
+    window.setTimeout(() => {
+        // This is a hack to get around Safari not triggering
+        // load on reload/back..
+        $('.content-wrapper').addClass('loaded');
+    }, 500);
 }

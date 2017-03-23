@@ -40,7 +40,7 @@ namespace WebApplication.Controllers {
 
             builder.AppendLine($"Hej {order.Name}!");
             builder.AppendLine();
-            builder.AppendLine($"Tack för din bokning av {order.TicketCount} biljetter till Suntripfesten! Man måste ju betala också har jag hört, vi skickar ut info om det inom några dagar.");
+            builder.AppendLine($"Tack för din bokning av {order.TicketCount} biljetter till Suntripfesten! Man måste ju betala också har jag hört, vi skickar ut info om det när det börjar närma sig.");
             builder.AppendLine("Nedan följer en summering av din bokning.");
             
             builder.AppendLine();
@@ -61,7 +61,7 @@ namespace WebApplication.Controllers {
             builder.AppendLine();
             builder.AppendLine("Har du frågor kan du kontakta oss genom att svara på detta mail.");
             builder.AppendLine();
-            builder.AppendLine("/ Suntrip-folket");
+            builder.AppendLine("/ Suntripfesten-folket");
 
             _mailService.SendMessage(order.Email, "Din bokning av Suntripfesten", builder.ToString());
 

@@ -14,18 +14,69 @@
     <span>dom reser från någonting.</span>
   </div>
 
-  <div class="logo">
-    <img src="svg/suntrip2.svg"/>
-  </div>
+  
   <div class="content">
+    <div class="banner">
+      <img src="images/suntrip_live.jpg"/>
+    </div>
+    <div class="logo">
+      <img src="svg/suntrip2.svg"/>
+    </div>
     <div class="texts">
       <h1>
         <p class="sub">Den 6:e Maj återuppstår Suntrip för en kväll med ett ända mål;</p>
         <p class="head">att ta med er på en resa tillbaka till 80-talet!</p>
       </h1>
-      <p>Häng med oss och plocka kulor, kolla om vi tål starksprit & lär oss uttala Stork.. Storch (eller hur var det)</p>
-      <p>Så sparka av dig snökängorna och på med axelvaddarna och solbrillorna så drar vi till solen*.</p>
       
+      <p>- Men vad händer under kvällen??</p>
+      <p>Det är lite hemligt men:</p>
+      <ol>
+        <li>Vi träffast på Angelini mitt inne i stan och får en fördrink</li>
+        <li>resan bär av mot okänt resemål</li>
+        <li>under resans gång hinner vi med en taxfree-depå</li>
+        <li>väl framme på vår destinaton dukas en underbar middag upp.</li>
+        <li>plocka kulor, kolla om vi tål starksprit & lär oss uttala Stork.. Storch (eller hur var det) och en massa annat! =)</li>
+      </ol>
+      
+      
+      
+    </div>
+    <div class="puffs">
+      <article class="puff">
+        <img src="images/klader.jpg"/>
+        <h1>TEMA: 80-TALS SOMMAR</h1>
+        <span>Sparka av dig snökängorna, på med axelvaddarna och solbrillorna så drar vi till solen!</span>
+      </article>
+      <article class="puff">
+        <img src="images/invalidos.jpg"/>
+        <h1>LIVE PÅ SCEN INVALIDOS!</h1>
+        <span>Under kvällen spelar Invalidos (Over & Out) sköna 80-talsklassiker!</span>
+      </article>
+      <article class="puff">
+        <img src="images/toa-sup.jpg"/>
+        <h1>TAXFREE INGÅR!</h1>
+        <span>På vår resa kommer vi hinna med ett snabbt taxfree-stopp. självklart ingår även detta i resans pris.</span>
+      </article>
+    </div>
+    <div class="puffs">
+      <article class="puff">
+        <img src="images/buss.jpg"/>
+        <h1>VÅRA RESELEDARE TAR HAND OM ER!</h1>
+        <span></span>
+      </article>
+      <article class="puff">
+        <img src="images/dansa.jpg"/>
+        <h1>DANS UTVLOVAS!</h1>
+        <span>Plocka kulor! Plocka med höger... plocka med vänster... plocka kulor!</span>
+      </article>
+      <article class="puff">
+        <div class="flippy">
+          <img src="images/sup-1.jpg"/>
+          <img class="hidden" src="images/sup-2.jpg"/>
+        </div>
+        <h1>BJUD IN DINA GLADA VÄNNER!</h1>
+        <span>Än finns det biljetter kvar, bjud in dina vänner! Nått mer borde vi skriva</span>
+      </article>
     </div>
     <p class="gas">Brännsletillägget är redan betalt så vad väntar du på?<p>
     <div class="ticket-type">
@@ -43,9 +94,6 @@
         <li>
           Taxfree
         </li>
-        <li>
-          Måltidsdryck ingår som regel ej**
-        </li>
       </ol>
       <span class="price">495:-</span>
       @if(Model.TicketsLeft > 0) {
@@ -54,18 +102,46 @@
         <span class="no-tickets">Tyvärr verkar vi vara fullbokade för tillfället!</span>
       }
     </div>
+    
     <div class="form hidden">
       @Html.Partial("Partials/Form")
     </div>
+    <div class="movie">
+      <iframe src="https://www.youtube.com/embed/Kgs7UJkP8L0" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <section class="footer">
+      
+      <!--div class=columns >
+        <div class="column">
+          <span
+        </div>
+      </div-->
+      <h1>Vi som anordnar detta är:</h1>
+      <div class="organizers">
+        <article>
+          <img src="images/ds.gif"/>
+          <h1>DICK SELBERG</h1>
+          <p>Favoritcitat från filmen:</p>
+          <span>Va e're för snack? Bärra hem Berra?</span>
+        </article>
+        <article>
+          <img src="images/mn.gif"/>
+          <h1>MICKE NYGÅRD</h1>
+          <p>Favoritcitat från filmen:</p>
+          <span>Finns det svenskt kaffe på hotellet?</span>
+        </article>
+        <article>
+          <img src="images/ah.gif"/>
+          <h1>ALEXANDER HÅKANSSON</h1>
+          <p>Favoritcitat från filmen:</p>
+          <span>a, vad fan, man var ju nykter i morse men nu börjar det ordna upp sig!</span>
+        </article>
+      </div>
+      
+      <span class="mail">Frågor på detta?? maila oss så svarar vi så fort vi kan =) <a href="mailto:info@suntripfesten.se">info@suntripfesten.se</a></span>
+      
+    </section>
     
-    <span class="mail">Frågor på detta?? maila oss så svarar vi så fort vi kan =) <a href="mailto:info@suntripfesten.se">info@suntripfesten.se</a></span>
-
-
-  </div>
-  
-  <div class="stars">
-    <span>* ingen sol utlovas.. man vad var det Rudolf sa: "sol i sinne brun inne"? (fel film jag vet, men ändå.)</span>
-    <span>** lokala avvikelser kan förekomma</span>
   </div>
 </div>
 }

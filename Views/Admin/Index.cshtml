@@ -44,7 +44,7 @@
                     @if(Model.PageIndex > 0) {
                         @Html.ActionLink("Föregående", "Index", "Admin", new { pageIndex = Model.PageIndex - 1 })
                     }
-                    @if((Model.PageIndex + 1) * Model.PageSize > Model.OrderedTickets) {
+                    @if((Model.PageIndex + 1) < Model.TotalPages) {
                         @Html.ActionLink("Nästa", "Index", "Admin", new { pageIndex = Model.PageIndex + 1 })
                     }
                 </td>

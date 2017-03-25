@@ -4,6 +4,7 @@ using WebApplication.Models.Database;
 
 namespace WebApplication.Contracts {
     public interface ITicketService {
+         Int32 GetOrderCount();
          Int32 GetTicketCount();
          Int32 GetPaidTicketCount();
          TicketOrder GetOrder(string id);

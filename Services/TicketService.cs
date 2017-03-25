@@ -16,6 +16,14 @@ namespace WebApplication.Services {
             _database = client.GetDatabase(connectionString.DatabaseName);
         }
 
+        public Int32 GetOrderCount() {
+            var collection = _database.GetCollection<TicketOrder>("orders");
+            var count = collection.AsQueryable()
+                            .Where(order => order.Deleted == false)
+                            .Count();
+            return count;
+        }
+
         public Int32 GetTicketCount() {
             var collection = _database.GetCollection<TicketOrder>("orders");
             var count = collection.AsQueryable()

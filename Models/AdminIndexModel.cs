@@ -9,5 +9,6 @@ namespace WebApplication.Models {
         public List<TicketOrder> Tickets { get; set; }
         public Int32 PageSize { get; set; }
         public Int32 PageIndex { get; set; }
+        public Int32 TotalPages { get; set; }
     }    
 }

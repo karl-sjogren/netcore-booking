@@ -16,11 +16,12 @@ namespace WebApplication.Controllers {
         public IActionResult Index(Int32 pageIndex = 0, Int32 pageSize = 20) {
             var model = new AdminIndexModel {
                 PageIndex = pageIndex,
-                PageSize = pageSize,
+                PageSize = pageSize
             };
             model.Tickets = _ticketService.GetOrders(pageIndex, pageSize);
             model.OrderedTickets = _ticketService.GetTicketCount();
             model.PaidTickets = _ticketService.GetPaidTicketCount();
+            model.TotalPages = (Int32)Math.Ceiling((double)_ticketService.GetOrderCount() / pageSize);
             return View(model);
         }
 

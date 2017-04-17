@@ -88,7 +88,7 @@ namespace WebApplication.Controllers {
                     worksheet.Cells[row, 6].Value = order.Phone;
                     worksheet.Cells[row, 7].Value = order.Email;
                     worksheet.Cells[row, 8].Value = order.Paid ? "Ja" : "Nej";
-                    worksheet.Cells[row, 9].Value = order.OrderDate;
+                    worksheet.Cells[row, 9].Value = order.OrderDate.ToString("yyyy-MM-dd");
                     worksheet.Cells[row, 10].Value = order.TicketCount;
                     worksheet.Cells[row, 11].Value = order.TicketCount * 495;
 

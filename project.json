@@ -26,7 +26,8 @@
     "MongoDB.Driver": "2.4.1",
     "SendGrid.NetCore": "1.0.0-rtm-00002",
     "FluentValidation": "6.4.0-beta9",
-    "idunno.Authentication": "1.0.0"
+    "idunno.Authentication": "1.0.0",
+    "EPPlus.Core": "1.3.2"
   },
 
   "tools": {
